@@ -31,8 +31,11 @@ class CarsIndex extends Component {
       return (
         <Link to={`/cars/${car.id}`} key={car.id}>
           <div className="car">
-            <h3>{car.make} {car.model}</h3>
-            <p><strong>Owner: </strong>{car.owner}</p>
+            <img src="../../assets/images/black.png" className="car-card-image"/>
+            <div className="car-card-content">
+              <h3>{car.brand} {car.model}</h3>
+              <p><strong>Owner: </strong>{car.owner}</p>
+            </div>
           </div>
         </Link>
       );

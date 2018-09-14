@@ -29,16 +29,22 @@ class CarsShow extends Component {
     return (
       <div className="main-container">
         <SidePanel key="SidePanel" garage={this.props.garage}>
-          <Link to="/">Back to list</Link>
+          <Link to="/" className="black-button">Back to list</Link>
         </SidePanel>
-        <div className="car">
-          <h3>{car.brand} - {car.model}</h3>
-          <p><strong>Owner:</strong> {car.owner}</p>
-          <h3 className="plate">{car.plate}</h3>
-          <button className="delete" onClick={this.handleClick}>
-            <i className="fa fa-trash-o" aria-hidden="true"></i>
-            Delete
-          </button>
+        <div className="car-show-card">
+          <img src="../../assets/images/black.png" className="show-card-image"/>
+          <div className="show-card-details">
+            <h3>{car.brand} - {car.model}</h3>
+            <p><strong>Owner:</strong> {car.owner}</p>
+            <div className="plate">
+              <h2>{car.plate}</h2>
+            </div>
+          </div>
+          <div className="show-card-btn">
+            <button className="delete" onClick={this.handleClick}>
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -49,6 +55,7 @@ function mapStateToProps(state, ownProps) {
   const id = parseInt(ownProps.match.params.id);
   return {
     car: state.cars.find((car) => car.id === id),
+    garage: state.garage
   };
 }
 

@@ -1,5 +1,21 @@
 body {
-  background-color: rgb(240,240,240);
+  background-color: rgb(245,245,245);
+}
+
+p {
+  font-size: 16px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+span {
+  color: red;
+}
+
+form {
+  width: 80%;
 }
 
 .main-container {
@@ -12,30 +28,186 @@ body {
   box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 }
 
-.side-panel {
-  padding: 10px;
-  width: 25%;
-  height: 100%;
-  background-color: white;
-}
 
 .car-list {
-  width: 75%;
+  width: 100%;
   height: 100%;
   padding: 10px 20px;
-  flex: 1 0 auto;
-  background-color: rgb(220,220,220);
+  background: rgb(230,230,230);
 }
 
 .car {
   width: 100%;
+  height: 120px;
   background-color: white;
+  position: relative;
+  margin-bottom: 10px;
+  border: solid 2px white;
 }
 
-ul {
-  padding-left: 0;
+.car-card-image {
+  height: 118px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-span {
-  color: red;
+.car-card-content {
+  position: absolute;
+  top: 0;
+  left: 150px;
+  color: black;
+}
+
+.car:hover {
+  text-decoration: none;
+  border: solid 2px black;
+}
+
+.car-show-card {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  position: relative;
+}
+
+.show-card-image {
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.show-card-details {
+  position: absolute;
+  top: 0;
+  left: 300px;
+}
+
+.show-card-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.delete {
+  background-color: #FF4C47;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bolder;
+  border: 2px solid #FF4C47;
+  border-radius: 2px;
+  transition: background-color 0.5s ease;
+}
+
+.delete:hover {
+  background-color: white;
+  color: #FF4C47;
+}
+
+.plate {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 10px 20px;
+}
+
+.plate h2 {
+  margin: 0;
+}
+
+.black-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 3px;
+  border: 2px solid black;
+  color: black;
+  font-weight: bolder;
+  padding: 10px;
+  min-width: 150px;
+  transition: background-color 0.5s ease;
+}
+
+.black-button:hover {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+}
+
+.wide {
+  width: 100%;
+  padding: 5px !important;
+}
+
+.side-panel {
+  padding: 10px;
+  min-width: 24%;
+  height: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.side-panel-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+
+.side-panel-content {
+  position: absolute;
+  top: 280px;
+  left: 0;
+  padding: 0 10px;
+  font-size: 12px !important;
+  color: rgb(80,80,80);
+}
+
+.side-panel-button {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.side-panel-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  z-index: 20;
+}
+
+.logo {
+  height: 80px;
+}
+
+.car-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.form-container {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 }
