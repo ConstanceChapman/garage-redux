@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 import { fetchCars } from '../actions/index';
-import Car from '../components/car';
 import SidePanel from '../components/side_panel';
 
 class CarsIndex extends Component {
@@ -29,7 +29,12 @@ class CarsIndex extends Component {
   renderList() {
     return this.props.cars.map((car) => {
       return (
-        <Car car={car} key={car.id} />
+        <Link to={`/cars/${car.id}`} key={car.id}>
+          <div className="car">
+            <h3>{car.make} {car.model}</h3>
+            <p><strong>Owner: </strong>{car.owner}</p>
+          </div>
+        </Link>
       );
     });
   };
@@ -37,8 +42,12 @@ class CarsIndex extends Component {
   render() {
     return (
       <div className="main-container">
-        <SidePanel garage={this.props.garage}/>
-        <div className="car-list text-center">
+        <SidePanel garage={this.props.garage}>
+          <Link to={'/cars/new'} className="black-button">
+            Add a car
+          </Link>
+        </SidePanel>
+        <div className="car-list">
             <ul ref={(list) => { this.list = list; }}>
               {this.props.cars.length > 0 ? this.renderList() : "No cars listed" }
             </ul>

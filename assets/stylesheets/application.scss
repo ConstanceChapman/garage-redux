@@ -1,27 +1,39 @@
-.app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+body {
+  background-color: rgb(240,240,240);
 }
 
 .main-container {
-  margin: 20px 0;
+  margin: 20px;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-radius: 2px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 }
 
 .side-panel {
-  max-width: 25vw;
+  padding: 10px;
+  width: 25%;
   height: 100%;
+  background-color: white;
 }
 
 .car-list {
+  width: 75%;
   height: 100%;
+  padding: 10px 20px;
   flex: 1 0 auto;
+  background-color: rgb(220,220,220);
 }
 
 .car {
   width: 100%;
+  background-color: white;
+}
+
+ul {
+  padding-left: 0;
 }
 
 span {

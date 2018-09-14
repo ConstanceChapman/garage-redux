@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { reduxForm, Field } from 'redux-form';
 import { createCar } from '../actions';
+import { Link } from 'react-router-dom';
+import SidePanel from '../components/side_panel';
 
 const REQUIRED = value => value ? undefined : 'Required';
 const ALPHANUMERIC = (value) => {
@@ -34,40 +36,45 @@ class CarsNew extends Component {
   render() {
     return (
       <div className="main-container">
+        <SidePanel garage={this.props.garage}>
+          <Link to={'/'} className="btn-primary">
+            Back to list
+          </Link>
+        </SidePanel>
         <div className="car-form">
           <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field
-                  label="Brand"
-                  name="brand"
-                  type="text"
-                  validate={[REQUIRED]}
-                  component={this.renderField}
-                  placeholder="Ford"
-                />
-                <Field
-                  label="Model"
-                  name="model"
-                  type="text"
-                  validate={[REQUIRED]}
-                  component={this.renderField}
-                  placeholder="Mustang"
-                />
-                <Field
-                  label="Owner"
-                  name="owner"
-                  type="text"
-                  validate={[REQUIRED]}
-                  component={this.renderField}
-                  placeholder="John Smith"
-                />
-                <Field
-                  label="Plate"
-                  name="plate"
-                  type="text"
-                  validate={[ALPHANUMERIC]}
-                  component={this.renderField}
-                  placeholder="123ABC"
-                />
+              label="Brand"
+              name="brand"
+              type="text"
+              validate={[REQUIRED]}
+              component={this.renderField}
+              placeholder="Ford"
+            />
+            <Field
+              label="Model"
+              name="model"
+              type="text"
+              validate={[REQUIRED]}
+              component={this.renderField}
+              placeholder="Mustang"
+            />
+            <Field
+              label="Owner"
+              name="owner"
+              type="text"
+              validate={[REQUIRED]}
+              component={this.renderField}
+              placeholder="John Smith"
+            />
+            <Field
+              label="Plate"
+              name="plate"
+              type="text"
+              validate={[ALPHANUMERIC]}
+              component={this.renderField}
+              placeholder="123ABC"
+            />
             <button className="btn btn-primary" type="submit"
             disabled={this.props.pristine || this.props.invalid}>
               Create Car
